@@ -3,14 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
-import Icon from 'material-ui/Icon';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
 import AppBar from 'material-ui/AppBar';
-import Menu, {
-  MenuItem,
-  MenuList,
-} from 'material-ui/Menu';
 import Dialog, {
   DialogTitle,
   DialogContent,
@@ -20,9 +13,10 @@ import Dialog, {
 import Typography from 'material-ui/Typography';
 import withStyles from 'material-ui/styles/withStyles';
 import withRoot from '../components/withRoot';
+import Navigation from '../components/Navigation';
 
 const styles = {
-  root: {
+  mainContent: {
     textAlign: 'center',
     paddingTop: 200,
   },
@@ -49,30 +43,30 @@ class Index extends Component {
     return (
       <div className={this.props.classes.root}>
         <AppBar>
-          <IconButton aria-label="Delete">
-            <MenuIcon />
-          </IconButton>
+          <Navigation />
         </AppBar>
-        <Dialog open={this.state.open} onRequestClose={this.handleRequestClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
-          <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button color="primary" onClick={this.handleRequestClose}>
-              OK
-            </Button>
-          </DialogActions>
-        </Dialog>
-        <Typography type="display1" gutterBottom>
-          Material-UI
-        </Typography>
-        <Typography type="subheading" gutterBottom>
-          example project
-        </Typography>
-        <Button raised color="accent" onClick={this.handleClick}>
-          Super Secret Password
-        </Button>
+        <div className={this.props.classes.mainContent} >
+          <Dialog open={this.state.open} onRequestClose={this.handleRequestClose}>
+            <DialogTitle>Super Secret Password</DialogTitle>
+            <DialogContent>
+              <DialogContentText>1-2-3-4-5</DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button color="primary" onClick={this.handleRequestClose}>
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
+          <Typography type="display1" gutterBottom>
+            Material-UI
+          </Typography>
+          <Typography type="subheading" gutterBottom>
+            example project
+          </Typography>
+          <Button raised color="accent" onClick={this.handleClick}>
+            Super Secret Password
+          </Button>
+        </div>
       </div>
     );
   }
