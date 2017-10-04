@@ -1,9 +1,7 @@
 import React from 'react';
-import Icon from 'material-ui/Icon';
-import Paper from 'material-ui/Paper';
 import IconButton from 'material-ui/IconButton';
 import Popover from 'material-ui/Popover';
-import Menu, {
+import {
   MenuItem,
   MenuList,
 } from 'material-ui/Menu';
@@ -21,6 +19,7 @@ export default class Navigation extends React.Component {
   handleTouchTap = (event) => {
     // This prevents ghost click.
     event.preventDefault();
+    console.log(event.currentTarget);
     this.setState({
       open: true,
       anchorEl: event.currentTarget,
@@ -28,7 +27,6 @@ export default class Navigation extends React.Component {
   };
 
   handleRequestClose = () => {
-    console.log("closing");
     this.setState({
       open: false,
     });
@@ -46,6 +44,7 @@ export default class Navigation extends React.Component {
           anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'left', vertical: 'top'}}
           onRequestClose={this.handleRequestClose}
+          style={{left: '0px', overflowY: 'auto'}}
         >
           <MenuList>
             <MenuItem>About</MenuItem>
