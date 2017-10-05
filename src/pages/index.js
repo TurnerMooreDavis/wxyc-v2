@@ -15,22 +15,32 @@ import withStyles from 'material-ui/styles/withStyles';
 import withRoot from '../components/withRoot';
 import NavigationTabs from '../components/NavigationTabs';
 import IconButton from 'material-ui/IconButton';
-import PlayCircleFilled from 'material-ui-icons/PlayCircleFilled';
+import PlayCircleOutline from 'material-ui-icons/PlayCircleOutline';
+import SvgIcon from 'material-ui/SvgIcon';
 
 const styles = {
   mainContent: {
     textAlign: 'center',
-    paddingTop: 100,
+    paddingTop: 120,
     backgroundColor: "#a72222",
-    paddingBottom: 100,
+    paddingBottom: 120,
   },
   whiteText: {
     color: "white",
   },
   nowPlaying: {
-    width: 100,
-    marginTop: 100,
-    color: "white"
+    width: 23,
+    height: 23,
+    marginBottom: "-2.5px",
+    color: "white",
+  },
+  nowPlayingIcon: {
+    width: 20,
+    height: 20,
+  },
+  playNow: {
+    // backgroundColor: "#A8C7D8",
+    marginTop: 50,
   },
   appBar: {
     color: "black",
@@ -40,15 +50,15 @@ const styles = {
     width: 150,
   },
   missionStatement: {
-    paddingTop: 20,
+    paddingTop: 10,
     fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-    fontSize: 20,
+    fontSize: 18,
     marginLeft: 100,
     marginRight: 100
   },
   quoteAuthor: {
     textAlign: "right",
-    fontSize: 14,
+    fontSize: 18,
   },
   quoteText: {
     textAlign: "left",
@@ -92,14 +102,17 @@ class Index extends Component {
         </Dialog>
         <img style={styles.mainImage} src="../../wxyc-4-transparent.png" />
         <Typography style={styles.whiteText} type="display1" gutterBottom>
-          Wxyc Radio
+          Wxyc Radi
+          <SvgIcon style={styles.nowPlaying} onClick={this.handleClick}>
+            <path stye={styles.nowPlayingIcon} d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+          </SvgIcon>
         </Typography>
         <Typography style={styles.whiteText} type="subheading" gutterBottom>
           89.3 FM - Chapel Hill, NC
         </Typography>
-        <IconButton onClick={this.handleClick} style={styles.nowPlaying} label="NowPlaying">
-          <PlayCircleFilled/>
-        </IconButton>
+        <Button style={styles.playNow} raised >
+          Play Now
+        </Button>
       </div>
       <p style={styles.missionStatement}>
         <p style={styles.quoteText}>
