@@ -25,36 +25,50 @@ const styles = {
     backgroundColor: "#a72222",
     paddingBottom: 120,
   },
-  whiteText: {
+  titleText: {
+    fontWeight: 300,
     color: "white",
+    fontSize: 56,
+  },
+  subtitleText: {
+    fontWeight: 300,
+    color: "white",
+    fontSize: 24,
   },
   nowPlaying: {
-    width: 23,
-    height: 23,
-    marginBottom: "-2.5px",
-    color: "white",
+    // color: "#03A9F4",
+    width: 36,
+    height: 36,
+    marginBottom: "-4px",
   },
   nowPlayingIcon: {
-    width: 20,
-    height: 20,
+    width: 33,
+    height: 33,
   },
   playNow: {
-    // backgroundColor: "#A8C7D8",
-    marginTop: 50,
+    backgroundColor: "#03A9F4",
+    color: "white",
+    marginTop: 20,
   },
   appBar: {
     color: "black",
     backgroundColor: "white",
   },
   mainImage: {
-    width: 150,
+    width: 200,
+  },
+  missionStatementContainer: {
+    backgroundColor: "rgb(238, 238, 238)",
+    paddingBottom: 10,
   },
   missionStatement: {
+    fontWeight: 300,
+    maxWidth: 700,
+    margin: "auto",
+    textAlign: "center",
     paddingTop: 10,
     fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-    fontSize: 18,
-    marginLeft: 100,
-    marginRight: 100
+    fontSize: 20,
   },
   quoteAuthor: {
     textAlign: "right",
@@ -90,9 +104,9 @@ class Index extends Component {
       </AppBar>
       <div className={this.props.classes.mainContent} >
         <Dialog open={this.state.open} onRequestClose={this.handleRequestClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
+          <DialogTitle>Now Playing</DialogTitle>
           <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
+            <DialogContentText>This activates now playing</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button color="primary" onClick={this.handleRequestClose}>
@@ -101,25 +115,26 @@ class Index extends Component {
           </DialogActions>
         </Dialog>
         <img style={styles.mainImage} src="../../wxyc-4-transparent.png" />
-        <Typography style={styles.whiteText} type="display1" gutterBottom>
+        <Typography style={styles.titleText} type="display1" gutterBottom>
           Wxyc Radi
           <SvgIcon style={styles.nowPlaying} onClick={this.handleClick}>
             <path stye={styles.nowPlayingIcon} d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
           </SvgIcon>
         </Typography>
-        <Typography style={styles.whiteText} type="subheading" gutterBottom>
+        <Typography style={styles.subtitleText} type="subheading" gutterBottom>
           89.3 FM - Chapel Hill, NC
         </Typography>
         <Button style={styles.playNow} raised >
-          Play Now
+          Play
         </Button>
       </div>
-      <p style={styles.missionStatement}>
-        <p style={styles.quoteText}>
-          <i>"Our mission is to illustrate the relationships between seemingly disparate types of music. We believe that our free-format is the best way to accomplish this mission. Our disc jockeys harness the almighty power of the segue to draw musical linkages across time, culture, and pure sound. A WXYC segue is a nod to the mutual inspirations that musical creations of dissimilar origins possess. Listen in and see if this author's conception doesn't make sense."</i>
-        </p>
-        <p style={styles.quoteAuthor}>--Jason Perlmutter, Former Station Manager</p>
-      </p>
+      <div style={styles.missionStatementContainer}>
+        <div style={styles.missionStatement}>
+          <p style={styles.quoteText}>
+            Our mission is to illustrate the relationships between seemingly disparate types of music. We believe that our free-format is the best way to accomplish this mission. Our disc jockeys harness the almighty power of the segue to draw musical linkages across time, culture, and pure sound. A WXYC segue is a nod to the mutual inspirations that musical creations of dissimilar origins possess. Listen in and see if this author's conception doesn't make sense
+          </p>
+        </div>
+      </div>
     </div>
     );
   }
