@@ -91,6 +91,7 @@ const styles = {
   contactButton:{
     color: "white",
     backgroundColor: "#a72222",
+    marginBottom: 10,
   },
   footer: {
     backgroundColor: "rgb(33, 33, 33)",
@@ -149,7 +150,7 @@ class Index extends Component {
         <img style={styles.mainImage} src="../../wxyc-4-transparent.png" />
         <Typography style={styles.titleText} type="display1" gutterBottom>
           Wxyc Radi
-          <SvgIcon style={styles.nowPlaying} onClick={this.handleClick}>
+          <SvgIcon style={styles.nowPlaying}>
             <path stye={styles.nowPlayingIcon} d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
           </SvgIcon>
         </Typography>
@@ -188,12 +189,12 @@ class Index extends Component {
           <p>
             WXYC is the student radio station at UNC Chapel Hill
           </p>
-          <a href="http://www.unc.edu/">
-            <img src="../../UNC_logo_white.png" style={styles.uncLogo}></img>
-          </a>
           <p>
             WXYC / CB #5210, Carolina Union / Chapel Hill, NC 27599
           </p>
+          <a href="http://www.unc.edu/">
+            <img src="../../UNC_logo_white.png" style={styles.uncLogo}></img>
+          </a>
         </div>
       </div>
     </div>
